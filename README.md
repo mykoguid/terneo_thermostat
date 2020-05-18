@@ -5,7 +5,7 @@
 
 put `terneo` folder to the `custom_components`
 
-###Config example:
+##Config example:
 Add your device to `configuration.yaml`:
 ```
 climate:
