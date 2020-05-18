@@ -89,14 +89,22 @@ class Thermostat:
             The result of the request.
         """
         kwergs = {'auth': self.auth}
+        sn = {'sn': self.sn}
 
-        kwergs.update(kwargs)
+        try:
+            json = kwargs['json']
+            json.update(sn)
+            body = {"json": json}
+            kwergs.update(body)
+        except Exception as e:
+            _LOGGER.error("Didn't find json body in request")
+            kwergs.update(kwargs)
 
         start_time = time.time()
         if start_time - self._last_request < 1:
             time.sleep(1)
 
-        # _LOGGER.error(f"terneo request start time: {start_time}. cmd - {kwargs['json'].get('cmd')}; pars - {kwargs['json'].get('par')}")
+        #_LOGGER.error(f"terneo request body: {kwergs}")
         try:
             r = requests.post(self._get_url(endpoint), timeout=5, **kwergs)
         except Exception as e:
@@ -104,9 +112,9 @@ class Thermostat:
             _LOGGER.error(e)
             return False
         end_time = time.time()
-        # _LOGGER.error(f'terneo request end time: {end_time}. diff: {end_time - start_time}')
         self._last_request = end_time
         content = r.json()
+        # _LOGGER.error(f'terneo response: {content}')
 
         if content.get('status', '') == 'timeout':
             _LOGGER.error(f'terneo timout: {kwargs}')
