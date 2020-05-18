@@ -4,5 +4,8 @@
   "documentation": "https://github.com/Makave1i/terneo_thermostat",
   "requirements": [],
   "dependencies": [],
-  "codeowners": []
+  "codeowners": [
+    "Makave1i",
+    "mykoguid"
+  ]
 }
