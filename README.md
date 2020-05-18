@@ -1,5 +1,8 @@
 # Terneo Thermostat component for Home Assistant
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
+
+![Validate](https://github.com/mykoguid/terneo_thermostat/workflows/Validate/badge.svg)
+
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs) 
 
 **Required device firmware version 2.3 and higher**
 
