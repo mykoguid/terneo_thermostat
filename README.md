@@ -6,13 +6,13 @@
 
 **Required device firmware version 2.3 and higher**
 
-In case you don't use HACS just put `terneo` folder to the `custom_components`
+In case you don't use HACS just put `terneo_thermostat` folder to the `custom_components`
 
 ### Config example:
 Add your device to `configuration.yaml`:
 ```
 climate:
-  - platform: terneo
+  - platform: terneo_thermostat
     serial: 'DEVICE_SERIALNUMBER'
     host: 'DEVICE_IP'
 ```

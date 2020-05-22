@@ -35,7 +35,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
         vol.Required(CONF_SERIAL): cv.string,
         vol.Required(CONF_HOST): cv.string,
-        vol.Optional(CONF_NAME, default="Terneo"): cv.string,
+        vol.Optional(CONF_NAME, default="Terneo_thermostat"): cv.string,
         vol.Optional(CONF_PORT, default=80): cv.port,
         vol.Inclusive(CONF_USERNAME, "authentication"): cv.string,
         vol.Inclusive(CONF_PASSWORD, "authentication"): cv.string,
